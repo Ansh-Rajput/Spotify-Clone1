@@ -7,7 +7,7 @@ const getSongsByTitle = async (title) => {
         cookies:cookies
     });
 
-    if(title.length === 0){
+    if(!title){
         const allSongs = await getSongs();
         return allSongs;
     }
