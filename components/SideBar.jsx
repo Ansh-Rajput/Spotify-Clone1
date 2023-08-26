@@ -7,9 +7,12 @@ import {BiSearch} from 'react-icons/bi'
 import Box from './Box'
 import SideBarItem from './SideBarItem'
 import Library from './Library'
+import UsePlayer from '@/hooks/UsePlayer'
+import { twMerge } from 'tailwind-merge'
 
 const SideBar = ({children,songs}) => {
     const pathName = usePathname();
+    const player = UsePlayer();
     const routes = useMemo(()=>[
         {
             icon:HiHome,
@@ -25,7 +28,9 @@ const SideBar = ({children,songs}) => {
         },
     ],[])
   return (
-    <div className='flex h-full'>
+    <div className={twMerge(`first-letter:
+      flex h-full
+    `,player.activeId && "h-[calc(100%-80px)]")}>
       <div className="hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px] p-2">
         <Box>
             <div className="flex flex-col gap-y-4 px-5 py-4">

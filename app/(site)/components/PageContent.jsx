@@ -1,8 +1,10 @@
 'use client'
 import SongItem from '@/components/SongItem'
+import UseOnPlay from '@/hooks/UseOnPlay'
 import React from 'react'
 
 const PageContent = ({songs}) => {
+    const onPlay = UseOnPlay(songs);
     if(songs.length === 0){
         return (
             <div className="mt-4 text-neutral-400">
@@ -25,7 +27,7 @@ const PageContent = ({songs}) => {
         songs.map((item)=>{
             return <SongItem
                 key={item.id}
-                onClick={()=>{}}
+                onClick={(id)=>onPlay(id)}
                 data={item}
             />
         })
