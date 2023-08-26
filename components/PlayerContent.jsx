@@ -114,7 +114,7 @@ const PlayerContent = ({song,songUrl}) => {
                 onClick={onPlayNext}
             />
       </div>
-      <div className='hidden md:flex w-full justify-end pr-2'>
+      <div className='hidden md:flex w-full items-center justify-end pr-2'>
             <div className='flex items-center gap-x-2 w-[120px]'>
                 <VolumeIcon onClick={toggleMute} className='cursor-pointer' size={34}/>
             </div>
